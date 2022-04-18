@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import SignupForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from .models import NeighbourHood
+from .models import NeighbourHood, Profile
 from .forms import UpdateProfileForm
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -40,5 +41,12 @@ def profile(request, username):
     return render(request, 'profile.html')
 
 def edit_profile(request, username):
-    form= UpdateProfileForm()
+    user =user.objects.get(username=username)
+
+    if request.method == 'POST':
+        form = UpdateProfileForm(request.POST)
+
+    else:
+        form = UpdateProfileForm()
+     
     return render(request, 'editprofile.html', {'form': form})
