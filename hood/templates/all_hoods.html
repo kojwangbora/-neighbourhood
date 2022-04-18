@@ -4,9 +4,10 @@
 <div class="container">
     <h1>Welcome to the Hood</h1>
     <div class="row">
+        {% for hood in all_hoods %}
         <div class="col-md-4">
-            {% for hood in all_hoods %}
-            <div class="card">
+           
+            <div class="card mb-4">
                 <img src="{{ hood.logo.url }}" class="card-img-top" alt="{{ hood.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ hood.name }}</h5>
@@ -15,9 +16,8 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
