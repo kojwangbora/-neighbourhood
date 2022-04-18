@@ -1,17 +1,15 @@
-{% load static%}
-{% load bootstrap4 %}
-
 <!doctype html>
 <html lang="en">
+{% load static%}
+{% load bootstrap4 %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>The Hood</title>
-    {% block styles %}
-    {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    {% endblock %}
+    <title>The Hood</title>
+    
+     
   </head>
   <body>
     {% block content %}
