@@ -3,6 +3,7 @@ from .forms import SignupForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .models import NeighbourHood
+from .forms import UpdateProfileForm
 
 
 # Create your views here.
@@ -39,4 +40,5 @@ def profile(request, username):
     return render(request, 'profile.html')
 
 def edit_profile(request, username):
-    return render(request, 'editprofile.html')
+    form= UpdateProfileForm()
+    return render(request, 'editprofile.html', {'form': form})
