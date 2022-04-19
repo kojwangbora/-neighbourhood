@@ -18,15 +18,31 @@ h1
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  padding-right:10px;
-  background: #1a3e59;
+  background: #353738;
   color: #fff;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-   
+  transition: all 0.3s;
 }
 
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+}
+#content{
+  flex-grow: 1;
+}
 
+.navbar {
+  padding: 20px 10px;
+  background-color: #050505;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+  /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); */
+}
  
  

@@ -27,17 +27,6 @@ def signup(request):
         form = SignupForm()
     return render(request, 'registration/signup.html', {'form': form})
 
-def create_hood(request):
-    if request.method == 'POST':
-        form = NeighbourHoodForm(request.POST, request.FILES)
-        if form.is_valid():
-            hood = form.save(commit=False)
-            hood.admin = request.user.profile
-            hood.save()
-            return redirect('hood')
-    else:
-        form = NeighbourHoodForm()
-    return render(request, 'newhood.html', {'form': form})
 
 def single_hood(request, hood_id):
     hood = NeighbourHood.objects.get(id=hood_id)
@@ -71,7 +60,15 @@ def hoods(request):
     return render(request, 'all_hoods.html', params)
 
 def create_hood(request):
-    form = NeighbourHoodForm()
+    if request.method == 'POST':
+        form = NeighbourHoodForm(request.POST, request.FILES)
+        if form.is_valid():
+            hood = form.save(commit=False)
+            hood.admin = request.user.profile
+            hood.save()
+            return redirect('hood')
+    else:
+        form = NeighbourHoodForm()
     return render(request, 'newhood.html', {'form': form})
 
 
@@ -115,3 +112,23 @@ def edit_profile(request, username):
     else:
         form = UpdateProfileForm(instance=request.user.profile)
     return render(request, 'editprofile.html', {'form': form})
+
+def hood_members(request, hood_id):
+    hood = NeighbourHood.objects.get(id=hood_id)
+    members = Profile.objects.filter(neighbourhood=hood)
+    return render(request, 'members.html', {'members': members})
+
+def search_business(request):
+    if request.method == 'GET':
+        name = request.GET.get("title")
+        results = Business.objects.filter(name__icontains=name).all()
+        print(results)
+        message = f'name'
+        params = {
+            'results': results,
+            'message': message
+        }
+        return render(request, 'results.html', params)
+    else:
+        message = "You haven't searched for any image category"
+    return render(request, "results.html")

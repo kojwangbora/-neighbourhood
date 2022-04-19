@@ -1,13 +1,13 @@
 
 <nav id="sidebar" class="">
     <div class="sidebar-header ">
-        <h3><a href="{% url 'index' %}" style="text-decoration: none; color: black; margin-left: 3%; margin-top: 2%;">The Hood</a></h3>
+        <h3><a href="{% url 'index' %}" style="text-decoration: none; color: white; margin-left: 10%;">The Hood</a></h3>
     </div>
     {% if user.is_authenticated %}
     <ul class="list-unstyled components mr-2 ml-2">
         <li class="mb-4">
             <a href="{% url 'profile' user.username %}">
-                <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" style="text-decoration: none; margin-left: 3%;">
+                <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" style="text-decoration: none; margin-left: 3%;"height="100px" width="100px">
                 &nbsp; Profile
             </a>
 
