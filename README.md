@@ -7,14 +7,6 @@ This is a neighborhood app where a user must signup first, be able to join a hoo
 join a hood, one can see businesses and posts in only that wood they belong to.  
 ##  Live Link  
  Click [View Site]()  to visit the site
-  
-## Screenshots 
-###### Home page
-[Screenshot from 2022-04-19 15-42-23](https://user-images.githubusercontent.com/93545405/164009834-49ef3f4a-ff12-476a-bf80-59f0b5676922.png)
- 
-<img src="/home/moringa/Desktop/Hood/static/images/Screenshotfrom/2022-04-19/5-42-23.png">
-
- 
 ## User Story  
   
 * Sign in with the application to start using.
