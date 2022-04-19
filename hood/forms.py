@@ -20,9 +20,8 @@ class UpdateProfileForm(forms.ModelForm):
         exclude = ('user','neighbourhood')
 
 class NeighbourHoodForm(forms.ModelForm):
-    photo = CloudinaryField(label='')
 
     class Meta:
         model = NeighbourHood
-        fields = ('logo', 'name', 'location', 'description')
+        fields = '__all__'
         exclude=['user']
