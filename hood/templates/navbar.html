@@ -5,7 +5,7 @@
                 
                 {% if user.is_authenticated %}
                 <li class="nav-item active">
-                     <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" height="125px" width="125px" alt="">
+                     <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" height="50px" width="50px" alt="">
                     &nbsp; <span class="text-white">{{user.username|title}}</span>
                 </li>
                 {% else %}

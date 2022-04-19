@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<div class="container" >
+    <div class="text-dark text-center" style="margin-top:15%">
+        <h1>Welcome to the Hood</h1>
+        <h5 style="margin-top:6%">Joining a hood today</h5>
+        <a href="{% url 'hood' %}" class="btn btn-sm btn-info mt-4">Join Hood</a>
+    </div>
 
-<div class="container">
-    <h1 class="text-center">Welcome to the Hood</h1>
-    <a class="btn btn-sm btn-info" href="{% url 'logout' %}">Logout</a>
-    <a href="{% url 'hood' %}" class="btn btn-sm btn-info">Hoods</a>
-    <a href="{% url 'profile' user.username %}" class="btn btn-sm btn-info">Profile</a>
-    <a href="{% url 'new-hood' %}" class="btn btn-sm btn-info"> New Hood</a>
 </div>
-    
 {% endblock %}

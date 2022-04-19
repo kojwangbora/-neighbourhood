@@ -1,44 +1,45 @@
+
 <nav id="sidebar" class="">
+    <div class="sidebar-header ">
+        <h3><a href="{% url 'index' %}" style="text-decoration: none; color: black; margin-left: 3%; margin-top: 2%;">The Hood</a></h3>
+    </div>
     {% if user.is_authenticated %}
     <ul class="list-unstyled components mr-2 ml-2">
         <li class="mb-4">
             <a href="{% url 'profile' user.username %}">
-                <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" height="125px" width="125px" alt="">
-                &nbsp; 
-                Profile
+                <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" style="text-decoration: none; margin-left: 3%;">
+                &nbsp; Profile
             </a>
 
         </li>
         <li class="mb-4">
-            <a href="{% url 'edit-profile' user.username %}">
-                <i class="fas fa-edit"></i>&nbsp;
+            <a href="{% url 'edit-profile' user.username %}" style="text-decoration: none; margin-left: 3%;">
                 &nbsp; Edit Profile
             </a>
         </li>
         <li class="mb-4">
-            <a href="{% url 'hood' %}">
-                <i class="fas fa-home"></i>&nbsp;
+            <a href="{% url 'hood' %}" style="text-decoration: none; margin-left: 3%;">
                 &nbsp; Hoods
             </a>
         </li>
 
         {% if user.profile.neighbourhood %}
         <li class="mb-4">
-            <a href="{% url 'single-hood' user.profile.neighbourhood.id %}">
-                <i class="fas fa-paper-plane"></i>&nbsp;
+            <a href="{% url 'single-hood' user.profile.neighbourhood.id %}" style="text-decoration: none; margin-left: 3%;">
+                &nbsp;
                 &nbsp;{{user.profile.neighbourhood.name}}
             </a>
         </li>
         {% else %}
         <li class="mb-4">
-            <a href=""> &nbsp;
+            <a href="" style="text-decoration: none; margin-left: 3%;"> &nbsp;
                 No Hood Yet
             </a>
         </li>
         {% endif %}
     </ul>
     <div class="logout ml-2 mr-2 ">
-        <a href="{% url 'logout' %}" class="btn btn-sm btn-outline-danger d-block mx-auto"> Logout</a>
+        <a href="{% url 'logout' %}" class="btn btn-md btn-outline-danger" style=" margin-left: 3%;"> Logout</a>
     </div>
 
     {% endif%}
